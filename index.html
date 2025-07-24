@@ -1,1 +1,313 @@
-1
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гайд: Инструкция по выживанию</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Исправление для Google Sites */
+        html, body {
+            height: auto !important;
+            min-height: 1px !important;
+            overflow: visible !important; 
+        }
+
+        /* Анимация для плавного появления блоков */
+        .fade-in-item {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Стилизация аккордеона */
+        details > summary {
+            list-style: none;
+            cursor: pointer;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+        .accordion-arrow {
+            transition: transform 0.3s ease-in-out;
+        }
+        details[open] > summary .accordion-arrow {
+            transform: rotate(90deg);
+        }
+        .accordion-content {
+            overflow: hidden;
+            animation: slideDown 0.4s ease-in-out;
+        }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Анимация для всплывающего текста */
+        @keyframes popup-in {
+            from { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+            to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        }
+        @keyframes popup-out {
+            from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            to { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+        }
+        .popup-in {
+            animation: popup-in 0.3s ease-out forwards;
+        }
+        .popup-out {
+            animation: popup-out 0.3s ease-in forwards;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <div id="main-container" class="container mx-auto max-w-3xl p-4 sm:p-8">
+        
+        <!-- Заголовок -->
+        <header class="text-center mb-10 fade-in-item">
+            <h1 class="text-4xl sm:text-5xl font-bold text-white leading-tight">
+                🧭 Гайд по выживанию
+            </h1>
+            <p class="mt-2 text-xl text-gray-400">Твой щит от срывов, апатии и лени</p>
+        </header>
+        
+        <!-- Вступительный блок -->
+        <div class="bg-gray-800 rounded-2xl p-6 mb-10 text-center fade-in-item" style="animation-delay: 100ms;">
+             <p class="text-lg text-gray-300">Запомни, это не проблемы, это: контрольные точки на твоем пути. Этот гайд: твой набор инструментов, чтобы проходить их, а не застревать. Используй его как навигатор.</p>
+        </div>
+
+
+        <!-- Блоки с контентом -->
+        <main class="space-y-4">
+            
+            <!-- Секция 1 -->
+            <details class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden fade-in-item" style="animation-delay: 200ms;">
+                <summary class="flex items-center justify-between p-5 hover:bg-gray-700/50 transition-colors">
+                    <span class="font-bold text-lg text-white">🚨 1. СРЫВ: ЭТО НЕ ПРОВАЛ, А СИГНАЛ</span>
+                    <svg class="w-6 h-6 text-gray-400 accordion-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </summary>
+                <div class="p-5 pt-0 accordion-content">
+                    <p class="text-gray-300">Ты не робот. Ты живой человек, и на пути к большой цели заносы: это нормально. Срыв не обнуляет твой прогресс, он как лампочка на приборной панели: подсвечивает, где система дала сбой.</p>
+                    <div class="mt-4 bg-gray-700 p-4 rounded-lg">
+                        <p class="font-semibold text-white">Чек-лист для разбора:</p>
+                        <ul class="list-disc list-inside space-y-2 mt-2 text-gray-300">
+                            <li><span class="font-bold">Триггер:</span> Что именно его вызвало? (Стресс, дикий голод, недосып, алкоголь?)</li>
+                            <li><span class="font-bold">Эмоции:</span> Что ты чувствовал за час ДО и сразу ПОСЛЕ срыва?</li>
+                            <li><span class="font-bold">Альтернатива:</span> Как можно было поступить иначе в той ситуации?</li>
+                        </ul>
+                    </div>
+                    <p class="mt-4 text-center font-semibold text-cyan-400">Твой фокус: не на чувстве вины, а на поиске причины.</p>
+                </div>
+            </details>
+
+            <!-- Секция 2 -->
+            <details class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden fade-in-item" style="animation-delay: 300ms;">
+                <summary class="flex items-center justify-between p-5 hover:bg-gray-700/50 transition-colors">
+                    <span class="font-bold text-lg text-white">🔋 2. АПАТИЯ: ЭТО СЕВШАЯ БАТАРЕЙКА</span>
+                    <svg class="w-6 h-6 text-gray-400 accordion-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </summary>
+                <div class="p-5 pt-0 accordion-content">
+                    <p class="text-gray-300">Если тебе не хочется абсолютно ничего, это не лень. Скорее всего, твой ресурс на нуле. Пытаться тренироваться на износе: прямой путь к выгоранию и откату назад.</p>
+                     <div class="mt-4 bg-gray-700 p-4 rounded-lg">
+                        <p class="font-semibold text-white">Задай себе один вопрос:</p>
+                        <p class="mt-2 text-gray-300 italic">«Какой самый крошечный шаг я могу сделать прямо сейчас, чтобы не сойти с дистанции?»</p>
+                    </div>
+                    <p class="mt-4 font-semibold text-white">Ответы, которые считаются победой:</p>
+                    <p class="text-gray-300">5-минутная прогулка. 10-минутная растяжка. Лечь спать на час раньше. Выпить стакан воды. Этого достаточно, чтобы остаться в игре.</p>
+                </div>
+            </details>
+
+            <!-- Секция 3 -->
+            <details class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden fade-in-item" style="animation-delay: 400ms;">
+                <summary class="flex items-center justify-between p-5 hover:bg-gray-700/50 transition-colors">
+                    <span class="font-bold text-lg text-white">🧠 3. ЛЕНЬ: ЭТО РЕЖИМ ЭКОНОМИИ МОЗГА</span>
+                    <svg class="w-6 h-6 text-gray-400 accordion-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </summary>
+                <div class="p-5 pt-0 accordion-content">
+                    <p class="text-gray-300">Твой мозг: хитрая машина, заточенная на экономию энергии. Он ненавидит перемены и будет саботировать всё, что требует лишних усилий. Ты не "ленивый", твой мозг просто не видит мгновенной выгоды.</p>
+                     <div class="mt-4 bg-gray-700 p-4 rounded-lg">
+                        <p class="font-semibold text-white">Трюк «Правило Трех Минут»:</p>
+                        <p class="mt-2 text-gray-300 italic">Скажи себе: «Окей, я сделаю это всего 3 минуты, а потом решу, продолжать или нет».</p>
+                    </div>
+                    <p class="mt-4 text-gray-400">В 9 из 10 случаев, по истечении трёх минут, мозг уже втягивается в процесс, и сопротивление пропадает.</p>
+                </div>
+            </details>
+
+            <!-- ИЗМЕНЕННАЯ Секция 4 -->
+            <details class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden fade-in-item" style="animation-delay: 500ms;">
+                <summary class="flex items-center justify-between p-5 hover:bg-gray-700/50 transition-colors">
+                    <span class="font-bold text-lg text-white">🔎 4. УБЕРИ КНУТ, ВКЛЮЧИ АНАЛИЗ</span>
+                    <svg class="w-6 h-6 text-gray-400 accordion-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </summary>
+                <div class="p-5 pt-0 accordion-content">
+                    <p class="text-gray-300 mb-4">Самоуничижение: самый быстрый способ убить мотивацию. Анализ: единственный способ стать лучше.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-red-900/30 p-4 rounded-lg">
+                            <p class="font-bold text-red-400 mb-2">ЗАМЕНИ ЭТО:</p>
+                            <p class="mb-2">🤬 «Я слабак, опять все испортил»</p>
+                            <p>😩 «У меня ничего не получится»</p>
+                        </div>
+                        <div class="bg-green-900/30 p-4 rounded-lg">
+                            <p class="font-bold text-green-400 mb-2">НА ЭТО:</p>
+                            <p class="mb-2">🤔 «Окей, сбой в системе. Где причина? Что нужно изменить в плане, чтобы это не повторилось?»</p>
+                            <p>🧐 «Этот подход не сработал. Какой другой инструмент я могу попробовать?»</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-center font-semibold text-cyan-400">Разбор полётов: лучшее оружие против граблей.</p>
+                </div>
+            </details>
+
+            <!-- Секция 5 -->
+             <details class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden fade-in-item" style="animation-delay: 600ms;">
+                <summary class="flex items-center justify-between p-5 hover:bg-gray-700/50 transition-colors">
+                    <span class="font-bold text-lg text-white">🛡️ 5. ИМЕЙ ПЛАН «Б»</span>
+                    <svg class="w-6 h-6 text-gray-400 accordion-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </summary>
+                <div class="p-5 pt-0 accordion-content">
+                    <p class="text-gray-300">Жизнь: это хаос. Всегда будут дни, когда аврал на работе, болеет ребенок или просто всё идёт через одно место. Стратег готов к хаосу.</p>
+                     <div class="mt-4 bg-gray-700 p-4 rounded-lg">
+                        <p class="font-semibold text-white">Твой резервный план:</p>
+                         <ul class="list-disc list-inside space-y-2 mt-2 text-gray-300">
+                            <li><span class="font-bold">Еда:</span> Протеиновый батончик или орехи в сумке/машине.</li>
+                            <li><span class="font-bold">Тренировка:</span> 10-минутный домашний комплекс на случай, если до зала не доехать.</li>
+                            <li><span class="font-bold">Восстановление:</span> Топ-3 быстрых решения при усталости: большой стакан воды, белковый перекус, 15-минутный сон.</li>
+                        </ul>
+                    </div>
+                </div>
+            </details>
+
+            <!-- Секция 6 -->
+            <details class="bg-gray-800 rounded-2xl shadow-lg overflow-hidden fade-in-item" style="animation-delay: 700ms;">
+                <summary class="flex items-center justify-between p-5 hover:bg-gray-700/50 transition-colors">
+                    <span class="font-bold text-lg text-white">⛓️ 6. ВЫКИНЬ ПРИНЦИП «ВСЁ ИЛИ НИЧЕГО»</span>
+                    <svg class="w-6 h-6 text-gray-400 accordion-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                </summary>
+                <div class="p-5 pt-0 accordion-content">
+                    <p class="text-gray-300">Это мышление новичка. Профессионал знает, что стабильность важнее героизма. Если план на день выполнен на 60%, это в миллион раз лучше, чем 0%.</p>
+                    <p class="mt-2 text-gray-400">Один плохой день не перечеркнет месяц хорошей работы.</p>
+                     <div class="mt-4 bg-gray-700/50 border-l-4 border-cyan-500 p-3 rounded-r-lg">
+                        <p class="text-sm text-cyan-200">Запомни: Маленькие, регулярные действия дают огромный совокупный результат.</p>
+                    </div>
+                </div>
+            </details>
+            
+            <!-- Секция 7 -->
+            <div class="bg-blue-900/30 border-2 border-blue-500 rounded-2xl shadow-lg p-6 text-center fade-in-item" style="animation-delay: 800ms;">
+                <h3 class="font-bold text-xl text-white mb-3">🆘 7. ИСПОЛЬЗУЙ МЕНЯ КАК СВОЙ «ЗВОНОК ДРУГУ»</h3>
+                <p class="text-gray-300">Просить о помощи: это не слабость, это стратегия. Ты нанял меня, чтобы я был твоей страховкой и навигатором. Застрял? Накрыло апатией? Чувствуешь, что сейчас сорвешься? Не тяни резину.</p>
+                <button id="contact-btn" class="mt-4 bg-blue-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-blue-700 transition-colors shadow-lg focus:outline-none focus:ring-4 focus:ring-blue-500/50">
+                    НАПИСАТЬ ТРЕНЕРУ
+                </button>
+                <p class="mt-3 text-sm text-gray-400">Я помогу тебе перезагрузиться и вернуться в строй.</p>
+            </div>
+
+            <!-- Практика -->
+            <div class="border-2 border-amber-500 rounded-2xl shadow-lg p-6 fade-in-item" style="animation-delay: 900ms;">
+                <h3 class="font-bold text-xl text-white mb-3 text-center">⚡ ПРАКТИКА: «3 ШАГА К ВОЗВРАЩЕНИЮ В СТРОЙ»</h3>
+                <p class="text-center text-gray-300">Это твой аварийный протокол. Делай его всегда, когда чувствуешь, что теряешь контроль.</p>
+                <div class="mt-4 space-y-3 text-lg">
+                    <p><span class="font-bold text-amber-400">1. СТОП.</span> Признай факт без эмоций: "Да, сейчас я не в ресурсе / я сорвался / я забил".</p>
+                    <p><span class="font-bold text-amber-400">2. ВЫДОХ.</span> Физически прерви процесс. Встань, пройдись 2 минуты, сделай 5 глубоких вдохов и выдохов. Смени картинку.</p>
+                    <p><span class="font-bold text-amber-400">3. МИКРО-ДЕЙСТВИЕ.</span> Выполни абсолютный минимум, чтобы доказать себе, что ты в игре. Выбери одно: выпей стакан воды, сделай 10 приседаний, запиши одну строчку в свой трекер.</p>
+                </div>
+                <div class="mt-4 bg-gray-800 border-t-2 border-amber-500 p-4 rounded-b-lg text-center">
+                    <p class="font-semibold text-lg text-white">И скажи себе вслух: «Я не бросаю. Я адаптируюсь».</p>
+                </div>
+            </div>
+
+            <!-- Итог -->
+            <div class="text-center text-gray-400 p-6 fade-in-item" style="animation-delay: 1000ms;">
+                <p class="mt-2">Ты принял решение меняться. Значит, всё, что с тобой случается, это не проблема, а часть пути. Срыв: это не поражение. Поражение: это опустить руки и сдаться. А ты не сдашься. Потому что ты в процессе. А я с тобой.</p>
+            </div>
+        </main>
+
+        <!-- Подвал -->
+        <footer class="text-center mt-12 border-t border-gray-700 pt-6">
+            <p class="text-sm text-gray-500">&copy; 2025 г. Все права защищены. Специально для проекта Body balance.</p>
+        </footer>
+    </div>
+
+    <!-- Всплывающее сообщение -->
+    <div id="popup-msg" class="hidden fixed top-1/2 left-1/2 bg-green-500 text-white text-lg font-semibold px-6 py-3 rounded-lg shadow-xl z-50">
+        Жду тебя в чатике😉
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const container = document.getElementById('main-container');
+            const allDetails = document.querySelectorAll("details");
+            const contactButton = document.getElementById('contact-btn');
+            const popupMessage = document.getElementById('popup-msg');
+
+            // Логика эксклюзивного аккордеона
+            allDetails.forEach(detail => {
+                detail.addEventListener('toggle', event => {
+                    if (detail.open) {
+                        allDetails.forEach(otherDetail => {
+                            if (otherDetail !== detail) {
+                                otherDetail.removeAttribute('open');
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Логика всплывающего сообщения
+            contactButton.addEventListener('click', () => {
+                popupMessage.classList.remove('hidden', 'popup-out');
+                popupMessage.classList.add('popup-in');
+
+                setTimeout(() => {
+                    popupMessage.classList.remove('popup-in');
+                    popupMessage.classList.add('popup-out');
+                    
+                    setTimeout(() => {
+                        popupMessage.classList.add('hidden');
+                    }, 300); // Должно совпадать с длительностью анимации
+                }, 2500); // Время, которое сообщение видно
+            });
+
+            // Адаптация высоты для Google Sites
+            if ('ResizeObserver' in window) {
+                const observer = new ResizeObserver(entries => {
+                    if (entries.length > 0) {
+                        const height = entries[0].target.scrollHeight;
+                        document.body.style.height = height + 'px';
+                        document.documentElement.style.height = height + 'px';
+                    }
+                });
+                if (container) {
+                    observer.observe(container);
+                }
+            } else {
+                const resizeFallback = () => {
+                    if(container) document.body.style.height = container.scrollHeight + 'px';
+                };
+                setInterval(resizeFallback, 300);
+                window.addEventListener('resize', resizeFallback);
+                resizeFallback();
+            }
+        });
+    </script>
+</body>
+</html>
